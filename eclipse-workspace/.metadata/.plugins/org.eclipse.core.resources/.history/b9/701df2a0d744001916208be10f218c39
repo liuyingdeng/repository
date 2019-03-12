@@ -14,7 +14,7 @@ import java.awt.event.WindowEvent;
  *
  */
 
-public class GameFrame extends Frame {  //GUI编程：AWT，swing等。
+public class GameFrame2 extends Frame {  //GUI编程：AWT，swing等。
 	
 	Image img=GameUtil.getImage("images/sun.jpg");
 	
@@ -75,7 +75,7 @@ public class GameFrame extends Frame {  //GUI编程：AWT，swing等。
 	}
 	
 	public static void main(String[] args) {
-		GameFrame gf=new GameFrame();
+		GameFrame2 gf=new GameFrame2();
 		gf.launchFrame();
 		
 	}

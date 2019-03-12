@@ -14,12 +14,12 @@ import java.awt.event.WindowEvent;
  *
  */
 
-public class GameFrame extends Frame {  //GUI编程：AWT，swing等。
+public class GameFrame2 extends Frame {  //GUI编程：AWT，swing等。
 	
-	Image img=GameUtil.getImage("images/sun.jpg");
+	Image img=GameUtil.getImage("images/sun01.jpg");
 	
 	public void launchFrame() {
-		setSize(500,500);
+		setSize(1200,1200);
 		setLocation(100,100);
 		setVisible(true);
 		
@@ -29,30 +29,37 @@ public class GameFrame extends Frame {  //GUI编程：AWT，swing等。
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
-			
 		});
 	}
 	private double x,y;
+	private boolean left;
+	private boolean up;
 	@Override
 	public void paint(Graphics g) {
-		g.drawLine(100, 100, 200, 200);
-		g.drawRect(100, 100, 200, 200);
-		g.drawOval(100,100, 200, 200);
-		
-		Font f=new Font("宋体",Font.BOLD,100);
-		g.setFont(f);
-		g.drawString("加油！你可以的！",200,300);
-		
-		g.fillRect(100, 100, 20, 20);
-		Color c=g.getColor();
-		g.setColor(Color.blue );
-		g.fillOval(300,300,20,20);
-		g.setColor(c);
-		
 		g.drawImage(img,(int)x,(int)y,null);
+		if(left) {
+			x-=50;
+		}else {
+			x+=50;
+		}
+		if(x>1200-500) {
+			left=true;
+		}
+		if(x<0) {
+			left=false;
+		}
+		if(up) {
+			y-=50;
+		}else {
+			y+=50;
+		}
+		if(y>1200-500) {
+			up=true;
+		}
+		if(y<0) {
+			up=false;
+		}	
 		
-		x+=3;
-		y+=3;
 		
 	}
 	
@@ -75,7 +82,7 @@ public class GameFrame extends Frame {  //GUI编程：AWT，swing等。
 	}
 	
 	public static void main(String[] args) {
-		GameFrame gf=new GameFrame();
+		GameFrame2 gf=new GameFrame2();
 		gf.launchFrame();
 		
 	}
