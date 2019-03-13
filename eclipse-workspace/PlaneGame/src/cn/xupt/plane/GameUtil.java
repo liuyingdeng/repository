@@ -23,7 +23,7 @@ public class GameUtil {
 	        try {
 	        	Image img=null;
 
-	        	InputStream is=getClass().getResourceAsStream("images/sun01.jpg");
+	        	InputStream is=getClass().getResourceAsStream("images/sun02.jpg");
 	        	
 	        	if (is!=null)
 	        		img=ImageIO.read(is);

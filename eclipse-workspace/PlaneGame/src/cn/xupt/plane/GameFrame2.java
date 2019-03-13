@@ -1,7 +1,5 @@
 package cn.xupt.plane;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -19,7 +17,7 @@ public class GameFrame2 extends Frame {  //GUI±à³Ì£ºAWT£¬swingµÈ¡£
 	Image img=GameUtil.getImage("images/sun01.jpg");
 	
 	public void launchFrame() {
-		setSize(1200,800);
+		setSize(Constant.GAME_WIDTH,Constant.GAME_HEIGHT);
 		setLocation(100,100);
 		setVisible(true);
 		
